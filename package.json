@@ -1,0 +1,11 @@
+{
+  "name": "@hedviginsurance/web-example",
+  "version": "1.0.0",
+  "description": "Example project using the Hedvig cli and web survival kit",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@hedviginsurance/web-cli": "file:../web-cli"
+  }
+}
