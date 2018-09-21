@@ -1,11 +1,45 @@
 {
   "name": "@hedviginsurance/web-example",
   "version": "1.0.0",
-  "description": "Example project using the Hedvig cli and web survival kit",
-  "main": "index.js",
+  "description": "Example application using Hedvig's tools to the trade",
+  "main": "build/index.js",
+  "repository": "https://github.com/HedvigInsurance/web-example",
+  "author": "Johan Palmfjord <johan.palmfjord@hedvig.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "scripts": {
+    "start": "node build/index.js",
+    "build": "hedvig project:build ./hedvig.config.js",
+    "watch": "hedvig project:watch ./hedvig.config.js",
+    "test": "jest",
+    "format": "prettier \"src/*.{ts,tsx}\"",
+    "postinstall": "hedvig config:ensure ."
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.1.14",
+    "@types/jest": "^23.3.2",
+    "husky": "^0.14.3",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3"
+  },
   "dependencies": {
-    "@hedviginsurance/web-cli": "file:../web-cli"
+    "@hedviginsurance/cli": "file:../web-cli",
+    "@types/react": "^16.4.14",
+    "@types/react-dom": "^16.0.7",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "typescript": "^3.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
