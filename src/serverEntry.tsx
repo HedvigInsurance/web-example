@@ -1,5 +1,6 @@
 import 'source-map-support/register'
 import {
+  // tslint:disable ordered-imports
   createKoaServer,
   getScriptLocation,
 } from '@hedviginsurance/web-survival-kit'
